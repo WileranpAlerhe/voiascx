@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `idx_orders_provider_charge_id` ON `orders` (`provider_charge_id`);
