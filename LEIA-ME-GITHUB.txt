@@ -1,0 +1,26 @@
+VIAREGISTRO — PACOTE COMPACTO PARA GITHUB PAGES
+
+Este pacote foi preparado com menos de 100 arquivos para evitar o erro:
+"Yowza, that's a lot of files. Try uploading fewer than 100 at a time."
+
+COMO PUBLICAR
+
+1. Crie um repositório vazio no GitHub.
+2. Extraia este arquivo ZIP no seu computador.
+3. No repositório, clique em Add file > Upload files.
+4. Arraste TODOS os arquivos e a pasta assets para a área de upload.
+5. Clique em Commit changes.
+6. Abra Settings > Pages.
+7. Em Source, selecione Deploy from a branch.
+8. Selecione a branch main, a pasta /(root) e clique em Save.
+
+O GitHub exibirá o endereço público após concluir a publicação.
+
+IMPORTANTE SOBRE PAGAMENTOS
+
+O GitHub Pages hospeda somente arquivos estáticos. Catálogo, imagens, navegação,
+preços, formulário, máscara e consulta de CEP funcionam nesta versão. A geração
+real de Pix pela PinPay, armazenamento de pedidos e uploads precisam de um
+servidor seguro, pois a chave PINPAY_API_KEY não pode ficar exposta no navegador.
+
+Nunca coloque a chave secreta da PinPay dentro de script.js, servico.js ou HTML.

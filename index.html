@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08665a" />
+    <meta
+      name="description"
+      content="ViaRegistro: assessoria privada para busca, solicitação e entrega de documentos em todo o Brasil."
+    />
+    <title>ViaRegistro | Documentos sem complicação</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="viaregistro.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#catalogo">Ir para os serviços</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="ViaRegistro — início">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path d="M6 7.5 13.2 25 26 5" />
+              <path d="M17 7h9v9" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>via<span>registro</span></strong>
+            <small>Documentos sem complicação</small>
+          </span>
+        </a>
+
+        <label class="header-search" for="search-input">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-4-4" />
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            autocomplete="off"
+            placeholder="Busque por certidão, pesquisa ou serviço"
+          />
+          <kbd>Ctrl K</kbd>
+        </label>
+
+        <button class="cart-button" id="cart-button" type="button" aria-label="Abrir minha solicitação">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20.5 8H7" />
+            <circle cx="10" cy="20" r="1" />
+            <circle cx="18" cy="20" r="1" />
+          </svg>
+          <span class="cart-label">Minha solicitação</span>
+          <span class="cart-count" id="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="private-notice">
+      <strong>SERVIÇO PRIVADO QUE FACILITA A BUSCA E ENTREGA DE DOCUMENTOS EM TODO O BRASIL</strong>
+    </aside>
+
+    <nav class="category-nav" aria-label="Categorias de documentos">
+      <div class="category-track" id="category-tabs" role="tablist"></div>
+    </nav>
+
+    <main id="catalogo" class="main-content">
+      <div class="catalog-heading">
+        <div class="hero-copy">
+          <span class="hero-badge">Documentos em todo o Brasil</span>
+          <p class="eyebrow" id="current-category">Todos os serviços</p>
+          <h1>Documentos com menos burocracia.</h1>
+          <p class="hero-subtitle">Encontre o serviço certo, organize sua solicitação e conte com atendimento para cada etapa.</p>
+          <div class="hero-actions">
+            <a class="hero-action" href="#catalog-title">Ver serviços disponíveis</a>
+            <span>Atendimento em todo o Brasil</span>
+          </div>
+        </div>
+        <div class="hero-proof">
+          <p>Uma experiência simples do início ao fim</p>
+          <div>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+            <span><strong>Busca centralizada</strong>Encontre diferentes tipos de documentos em um só lugar.</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3 12h18M12 3c2.2 2.5 3.3 5.5 3.3 9S14.2 18.5 12 21M12 3C9.8 5.5 8.7 8.5 8.7 12S9.8 18.5 12 21"/></svg>
+            <span><strong>Cobertura nacional</strong>Atendimento para solicitações em todo o Brasil.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div>
+          <span>Catálogo de serviços</span>
+          <strong id="catalog-title">Escolha uma opção abaixo</strong>
+        </div>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
+      </div>
+
+      <section class="documents-list" id="documents-list" aria-label="Lista de serviços"></section>
+
+      <section class="empty-state" id="empty-state" hidden>
+        <span aria-hidden="true">⌕</span>
+        <h2>Nenhum documento encontrado</h2>
+        <p>Tente pesquisar usando menos palavras ou selecione outra categoria.</p>
+        <button id="clear-search" type="button">Limpar pesquisa</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <a class="footer-brand brand" href="./">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M6 7.5 13.2 25 26 5" />
+                <path d="M17 7h9v9" />
+              </svg>
+            </span>
+            <span class="brand-copy"><strong>via<span>registro</span></strong><small>Documentos sem complicação</small></span>
+          </a>
+          <p>Assessoria privada para localizar e solicitar documentos com mais praticidade.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#catalogo">Serviços</a>
+          <button type="button" data-open-info="como-funciona">Como funciona</button>
+          <button type="button" data-open-info="privacidade">Privacidade</button>
+          <button type="button" data-open-info="contato">Atendimento</button>
+        </div>
+      </div>
+      <div class="legal-line">
+        <p>Serviço privado de assessoria documental. Não possui vínculo com cartórios ou órgãos governamentais.</p>
+        <p>© <span id="year"></span> ViaRegistro.</p>
+      </div>
+    </footer>
+
+    <div class="overlay" id="overlay" hidden></div>
+
+    <section class="modal" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <button class="modal-close" type="button" data-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+      </button>
+      <div class="modal-icon" id="modal-icon" aria-hidden="true"></div>
+      <p class="eyebrow" id="modal-category"></p>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <div class="modal-note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM12 8v5M12 17h.01" /></svg>
+        <span>Prazo, preço e documentos necessários variam conforme o emissor e a localidade.</span>
+      </div>
+      <button class="primary-button" id="add-service" type="button">Adicionar à minha solicitação</button>
+    </section>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" hidden>
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">Resumo</p>
+          <h2 id="cart-title">Minha solicitação</h2>
+        </div>
+        <button class="modal-close" type="button" data-close aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="drawer-actions">
+        <button class="primary-button" id="copy-request" type="button">Copiar lista de documentos</button>
+        <button class="text-button" id="clear-cart" type="button">Limpar solicitação</button>
+      </div>
+    </aside>
+
+    <section class="info-modal modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
+      <button class="modal-close" type="button" data-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+      </button>
+      <p class="eyebrow">Informações</p>
+      <h2 id="info-title"></h2>
+      <div id="info-content"></div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="services-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

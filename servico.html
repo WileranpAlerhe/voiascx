@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08665a" />
+    <meta name="description" content="Detalhes do serviço documental oferecido pela ViaRegistro." />
+    <title>Serviço | ViaRegistro</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="viaregistro.css" />
+    <link rel="stylesheet" href="servico.css" />
+  </head>
+  <body class="service-page">
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site-header service-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="ViaRegistro — início">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M6 7.5 13.2 25 26 5"/><path d="M17 7h9v9"/></svg>
+          </span>
+          <span class="brand-copy"><strong>via<span>registro</span></strong><small>Documentos sem complicação</small></span>
+        </a>
+        <a class="back-catalog" href="index.html#catalogo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          Ver todos os serviços
+        </a>
+        <button class="cart-button" id="service-cart" type="button" aria-label="Ver minha solicitação">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20.5 8H7"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="cart-label">Minha solicitação</span>
+          <span class="cart-count" id="service-cart-count" hidden>0</span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="private-notice"><strong>SERVIÇO PRIVADO QUE FACILITA A BUSCA E ENTREGA DE DOCUMENTOS EM TODO O BRASIL</strong></aside>
+
+    <main id="conteudo" class="service-main">
+      <nav class="breadcrumb" aria-label="Navegação estrutural">
+        <a href="index.html">Início</a><span>/</span><a href="index.html#catalogo" id="breadcrumb-category">Serviços</a><span>/</span><strong id="breadcrumb-name">Documento</strong>
+      </nav>
+
+      <section class="service-hero">
+        <div class="service-intro">
+          <span class="service-tag" id="service-category">Serviço documental</span>
+          <h1 id="service-title">Carregando serviço...</h1>
+          <p id="service-description"></p>
+          <ul class="quick-benefits">
+            <li><span>✓</span> Solicitação organizada em poucos passos</li>
+            <li><span>✓</span> Orientação sobre os dados necessários</li>
+            <li><span>✓</span> Atendimento para todo o Brasil</li>
+          </ul>
+        </div>
+        <figure class="service-visual">
+          <img id="service-image" src="" alt="" />
+          <button class="image-view-button" id="open-image" type="button" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m5 17 4.5-4 3 2.5 2.5-2 4 3.5"/></svg>
+            Visualizar documento
+          </button>
+        </figure>
+      </section>
+
+      <section class="request-workspace" id="solicitar" aria-labelledby="request-title">
+        <div class="flow-heading">
+          <div>
+            <span class="request-kicker">Solicitação online</span>
+            <h2 id="request-title">Peça seu documento</h2>
+            <p id="request-flow-description">Preencha por etapas. A solicitação é criada na confirmação final.</p>
+          </div>
+          <div class="flow-price"><span id="flow-price-label">Valor do serviço</span><strong id="flow-price">Calculando...</strong><small id="flow-price-detail"></small></div>
+        </div>
+
+        <ol class="flow-progress" id="flow-progress" aria-label="Etapas da solicitação">
+          <li class="is-active" data-progress="1"><span>1</span><b>Localização</b></li>
+          <li data-progress="2"><span>2</span><b>Dados</b></li>
+          <li data-progress="3"><span>3</span><b>Entrega</b></li>
+          <li data-progress="4"><span>4</span><b>Contato</b></li>
+          <li data-progress="5"><span>5</span><b>Pagamento</b></li>
+        </ol>
+
+        <form id="request-form" novalidate>
+          <section class="flow-step is-active" data-step="1" aria-labelledby="step-one-title">
+            <div class="step-heading"><span>Etapa 1 de 5</span><h3 id="step-one-title">Onde está o registro?</h3><p>Use a localidade do cartório ou órgão que deve emitir o documento.</p></div>
+            <div class="form-grid">
+              <label><span class="field-label">Estado <em>*</em></span><select id="request-state" name="state" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></label>
+              <label><span class="field-label">Município <em>*</em></span><select id="request-city" name="city" required disabled><option value="">Selecione primeiro o estado</option></select><small id="city-status"></small></label>
+              <label class="form-wide"><span class="field-label">Busque o cartório pelo nome</span><input id="office-filter" type="search" autocomplete="off" placeholder="Digite parte do nome ou especialidade" disabled /></label>
+              <label class="form-wide"><span class="field-label">Cartório ou órgão emissor <em>*</em></span><select id="request-office" name="office" required disabled><option value="">Selecione primeiro o município</option></select><small id="office-status" aria-live="polite"></small></label>
+              <label class="form-wide consent office-unknown"><input id="unknown-office" name="unknownOffice" type="checkbox" value="yes" /><span>Não sei qual é o cartório ou preciso que a ViaRegistro localize</span></label>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="2" aria-labelledby="step-two-title" hidden>
+            <div class="step-heading"><span>Etapa 2 de 5</span><h3 id="step-two-title">Dados para localizar o documento</h3><p>Os campos mudam conforme o serviço escolhido.</p></div>
+            <div class="form-grid" id="dynamic-fields"></div>
+          </section>
+
+          <section class="flow-step" data-step="3" aria-labelledby="step-three-title" hidden>
+            <div class="step-heading"><span>Etapa 3 de 5</span><h3 id="step-three-title">Formato e entrega</h3><p>Escolha como prefere receber.</p></div>
+            <div class="choice-grid" id="delivery-choices">
+              <label class="choice-card"><input type="radio" name="delivery" value="digital" required /><span><b>Documento digital</b><small>Receba por e-mail quando o emissor disponibilizar.</small></span></label>
+              <label class="choice-card"><input type="radio" name="delivery" value="physical" required /><span><b>Documento físico</b><small>Envio com rastreamento para o endereço informado.</small></span></label>
+            </div>
+            <div class="form-grid address-fields" id="address-fields" hidden>
+              <label><span class="field-label">CEP <em>*</em></span><input id="postal-code" name="postalCode" inputmode="numeric" autocomplete="postal-code" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" /><small id="postal-code-status" aria-live="polite"></small></label>
+              <label><span class="field-label">Endereço <em>*</em></span><input id="delivery-address" name="address" autocomplete="street-address" /></label>
+              <label><span class="field-label">Número <em>*</em></span><input name="addressNumber" /></label>
+              <label><span class="field-label">Complemento</span><input name="addressExtra" /></label>
+              <label><span class="field-label">Bairro <em>*</em></span><input id="delivery-district" name="district" /></label>
+              <label><span class="field-label">Cidade / UF <em>*</em></span><input id="delivery-city" name="deliveryCity" /></label>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="4" aria-labelledby="step-four-title" hidden>
+            <div class="step-heading"><span>Etapa 4 de 5</span><h3 id="step-four-title">Quem está solicitando?</h3><p>Usaremos esses dados para identificar o pagamento e enviar atualizações.</p></div>
+            <div class="form-grid">
+              <label class="form-wide"><span class="field-label">Nome completo <em>*</em></span><input name="customerName" autocomplete="name" required /></label>
+              <label><span class="field-label">E-mail <em>*</em></span><input name="customerEmail" type="email" autocomplete="email" required /></label>
+              <label><span class="field-label">Celular <em>*</em></span><input name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required /></label>
+              <label><span class="field-label">CPF ou CNPJ <em>*</em></span><input name="customerDocument" inputmode="numeric" required /></label>
+              <label>Finalidade do documento<input name="purpose" placeholder="Ex.: cidadania, financiamento" /></label>
+              <label class="form-wide consent"><input type="checkbox" name="terms" required /><span>Confirmo que os dados informados são verdadeiros e autorizo seu uso para esta solicitação.</span></label>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="5" aria-labelledby="step-five-title" hidden>
+            <div class="step-heading"><span>Etapa 5 de 5</span><h3 id="step-five-title">Revise e gere o Pix</h3><p id="step-five-description">A cobrança é criada com segurança pela PinPay.</p></div>
+            <div class="checkout-grid">
+              <div class="order-summary" id="order-summary"></div>
+              <div class="payment-panel">
+                <span class="pinpay-badge" id="payment-badge">Pagamento via PinPay</span>
+                <h4 id="payment-method-title">Pix</h4>
+                <p id="payment-method-description">O código será exibido nesta tela após a confirmação.</p>
+                <button class="pay-button" id="pay-button" type="submit">Gerar Pix</button>
+                <small id="payment-message">Ambiente protegido. Nenhuma chave de pagamento fica no navegador.</small>
+              </div>
+            </div>
+            <div class="pix-result quote-result" id="quote-result" hidden>
+              <span>Solicitação recebida</span>
+              <h4>Seu documento foi enviado para orçamento</h4>
+              <p id="quote-status"></p>
+            </div>
+          </section>
+
+          <div class="flow-actions">
+            <button class="secondary-button" id="previous-step" type="button" hidden>Voltar</button>
+            <button class="request-button" id="next-step" type="button">Continuar</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="service-layout">
+        <div class="service-content">
+          <section class="content-card">
+            <span class="section-number">01</span>
+            <h2>Sobre este serviço</h2>
+            <p id="service-about"></p>
+          </section>
+
+          <section class="content-card">
+            <span class="section-number">02</span>
+            <h2>Quando este documento pode ser necessário</h2>
+            <ul class="check-list" id="service-uses"></ul>
+          </section>
+
+          <section class="content-card">
+            <span class="section-number">03</span>
+            <h2>Como funciona</h2>
+            <div class="steps">
+              <div><strong>1</strong><span><b>Informe os dados</b>Selecione a localidade e compartilhe as informações disponíveis.</span></div>
+              <div><strong>2</strong><span><b>Análise do pedido</b>Os dados são conferidos para identificar o emissor adequado.</span></div>
+              <div><strong>3</strong><span><b>Emissão e entrega</b>Prazo, formato e entrega são confirmados conforme o serviço escolhido.</span></div>
+            </div>
+          </section>
+
+          <section class="content-card">
+            <span class="section-number">04</span>
+            <h2>Informações que ajudam na solicitação</h2>
+            <ul class="check-list" id="service-requirements"></ul>
+            <p class="soft-note">Você pode iniciar mesmo sem todas as informações. A disponibilidade será confirmada durante o atendimento.</p>
+          </section>
+
+          <section class="content-card faq-card">
+            <span class="section-number">05</span>
+            <h2>Dúvidas frequentes</h2>
+            <details><summary>A ViaRegistro é um órgão público?</summary><p>Não. Somos uma plataforma privada de assessoria documental, sem vínculo com cartórios ou órgãos governamentais.</p></details>
+            <details><summary>O prazo é igual para todo o Brasil?</summary><p>Não. O prazo depende do emissor, da cidade, do formato escolhido e da disponibilidade do registro.</p></details>
+            <details><summary>O documento pode ser enviado por e-mail?</summary><p>Alguns emissores disponibilizam formato digital; outros fornecem apenas via física. As opções são confirmadas para cada pedido.</p></details>
+          </section>
+        </div>
+
+      </div>
+    </main>
+
+    <aside class="price-dock" id="price-dock" aria-label="Resumo de preço" aria-live="polite" hidden>
+      <div class="price-dock-main">
+        <span class="price-dock-step" id="price-dock-step">1 de 5</span>
+        <strong class="price-dock-service" id="price-dock-service">Serviço</strong>
+        <div class="price-dock-value">
+          <span id="price-dock-label">Valor do serviço</span>
+          <strong id="price-dock-price">Calculando...</strong>
+          <small id="price-dock-detail">Pagamento seguro via Pix</small>
+        </div>
+      </div>
+      <p id="price-dock-note">O valor informado inclui a assessoria da ViaRegistro.</p>
+    </aside>
+
+    <footer class="site-footer service-footer">
+      <div class="legal-line">
+        <p>Serviço privado de assessoria documental. Não possui vínculo com cartórios ou órgãos governamentais.</p>
+        <p>© <span id="year"></span> ViaRegistro.</p>
+      </div>
+    </footer>
+
+    <div class="service-toast" id="service-toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="image-dialog" id="image-dialog" aria-labelledby="image-dialog-title">
+      <div class="image-dialog-bar">
+        <strong id="image-dialog-title">Exemplo do documento</strong>
+        <button id="close-image" type="button" aria-label="Fechar imagem">×</button>
+      </div>
+      <div class="image-dialog-canvas"><img id="dialog-image" src="" alt="" /></div>
+    </dialog>
+    <dialog class="pix-dialog" id="pix-dialog" aria-labelledby="pix-dialog-title">
+      <div class="pix-modal-shell">
+        <header class="pix-modal-header">
+          <div class="pix-modal-brand">
+            <span class="pix-modal-brandmark" aria-hidden="true">V</span>
+            <span><strong>ViaRegistro</strong><small>Pagamento seguro</small></span>
+          </div>
+          <button class="pix-modal-close" id="close-pix-dialog" type="button" aria-label="Fechar pagamento">×</button>
+        </header>
+
+        <section class="pix-modal-intro">
+          <div>
+            <span class="pix-status-badge" id="pix-status-badge"><i></i> Pix gerado</span>
+            <h2 id="pix-dialog-title">Finalize seu pagamento</h2>
+            <p id="pix-modal-subtitle">Abra o app do seu banco e escaneie o QR Code ou copie o código Pix.</p>
+          </div>
+          <div class="pix-countdown" id="pix-countdown" aria-label="Tempo restante para pagar">
+            <span>Expira em</span>
+            <strong id="pix-timer">05:00</strong>
+          </div>
+        </section>
+        <div class="pix-timer-track" aria-hidden="true"><span id="pix-timer-bar"></span></div>
+
+        <div class="pix-modal-content">
+          <section class="pix-qr-card">
+            <span class="pix-qr-label">Escaneie para pagar</span>
+            <div class="pix-qr-frame">
+              <img id="pix-image" alt="QR Code real do pagamento Pix" hidden />
+              <div class="pix-qr-loading" id="pix-qr-loading"><span></span>Carregando QR Code</div>
+            </div>
+            <small>Use a câmera do aplicativo do seu banco</small>
+          </section>
+
+          <section class="pix-payment-details">
+            <div class="pix-value-row">
+              <span>Valor a pagar</span>
+              <strong id="pix-amount">R$ 0,00</strong>
+            </div>
+            <label class="pix-code-label" for="pix-code">Pix copia e cola</label>
+            <textarea id="pix-code" readonly aria-label="Código Pix copia e cola"></textarea>
+            <button class="pix-copy-button" id="copy-pix" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+              <span>Copiar Pix</span>
+            </button>
+            <ol class="pix-instructions">
+              <li><span>1</span>Abra o aplicativo do seu banco</li>
+              <li><span>2</span>Escolha pagar com Pix</li>
+              <li><span>3</span>Escaneie o QR Code ou cole o código</li>
+            </ol>
+          </section>
+        </div>
+
+        <div class="pix-modal-state" id="pix-expired-state" hidden>
+          <strong>Este Pix expirou</strong>
+          <p>Feche esta janela e gere um novo código para concluir o pedido.</p>
+          <button id="regenerate-pix" type="button">Gerar um novo Pix</button>
+        </div>
+
+        <footer class="pix-modal-footer">
+          <span class="pix-lock" aria-hidden="true">✓</span>
+          <p><strong>Ambiente protegido</strong> O pagamento é processado pela PinPay. A ViaRegistro não armazena dados bancários.</p>
+          <small id="order-status">Aguardando pagamento</small>
+        </footer>
+      </div>
+    </dialog>
+    <script src="services-data.js"></script>
+    <script src="servico.js"></script>
+  </body>
+</html>
