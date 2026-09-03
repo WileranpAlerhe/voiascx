@@ -18,9 +18,9 @@ export async function GET(request: Request) {
 
   const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`, {
     headers: { Accept: "application/json" },
-    cf: { cacheTtl: 86400, cacheEverything: true },
-  } as RequestInit);
-  const result = await response.json().catch(() => null) as ViaCepResponse | null;
+    next: { revalidate: 86400 },
+  });
+  const result = (await response.json().catch(() => null)) as ViaCepResponse | null;
   if (!response.ok || !result || result.erro) {
     return NextResponse.json({ error: "CEP não encontrado.", erro: true }, { status: 404 });
   }
